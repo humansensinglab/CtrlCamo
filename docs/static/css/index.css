@@ -133,7 +133,7 @@ body {
   border-radius: 10px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0.75rem;
+  padding: 0.5rem;
 }
 
 .cross-location-row {
@@ -160,6 +160,10 @@ body {
 .cross-location-left p,
 .cross-location-right p {
   margin-top: 0.5rem;
+}
+
+.bottom-aligned-panel {
+  align-items: flex-end;
 }
 
 .interpolation-panel .interpolation-image {

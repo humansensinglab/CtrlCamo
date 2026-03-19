@@ -117,17 +117,60 @@ Detectors through Controllable Image Editing</h1>
   </div>
 </section>
 
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <p style="font-size: 20px; font-weight: 600;">
+        How can we generate realistic adversarial camouflages for real-world, in-the-wild vehicles without relying on simulation platforms?
+    </p>
+  </div>
+</div>
+</section>
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img id="teaser" src="./static/images/teaser.png" alt="teasor" style="width: 70%; height: auto; display: block; margin: 0 auto;">
       <h2 class="subtitle has-text-centered", style="margin-top: 1rem;">
-        <p>Given a real image, our pipeline stylizes the target vehicle based on either its immediate surroundings (image-level) or a visual concept present in the overall scene (scene-level).</p>
+        <p>Given a real image, our method stylizes the target vehicle based on either its immediate surroundings (image-level) or a visual concept present in the overall scene (scene-level).</p>
       </h2>
     </div>
   </div>
 </section>
+<br/>
 
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Contributions</h2>
+  </div>
+  <br/>
+  <div class="content has-text-justified">
+    <p style="font-size: 18px;">
+        <span style="color: gold;"><i class="fas fa-star"></i></span>
+        We formulate camouflage attacks against detectors as a conditional image-editing problem.
+    </p>
+    <p style="font-size: 18px;">
+        <span style="color: gold;"><i class="fas fa-star"></i></span>
+        We propose two camouflage strategies inspired by nature. The image-level strategy blends the vehicle with its surroundings, and the scene-level strategy adapts the vehicle to a common concept present in the scene.
+    </p>
+    <p style="font-size: 18px;">
+        <span style="color: gold;"><i class="fas fa-star"></i></span>
+        We propose a novel pipeline based on ControlNet fine-tuning. Our method jointly enforces structural fidelity to maintain vehicle geometry, style consistency to produce stealthy camouflage, and an adversarial objective to reduce detectability by object detectors.
+    </p>
+    <p style="font-size: 18px;">
+        <span style="color: gold;"><i class="fas fa-star"></i></span>
+        We evaluate our approach on the COCO (ground-view) and LINZ (aerial-view) datasets. Results demonstrate:
+    </p>
+    <ul style="font-size: 18px; margin-left: 2em; margin-top: 0.5em;">
+        <li>Stronger adversarial effectiveness, better preservation of vehicle structure, and improved stealthiness compared to SOTA;</li>
+        <li>Transferability to black-box detectors, diverse environmental conditions, and the physical world.</li>
+        <li>Robustness under preprocessing defense strategies such as denoising and smoothing;</li>
+    </ul>
+  </div>
+</div>
+<br/>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -157,18 +200,16 @@ Detectors through Controllable Image Editing</h1>
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Experiment</h2>
+        <h2 class="title is-3">Featured Experiments</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">xxx</h3>
+        <h3 class="title is-4">Qualitative Results</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+
           </p>
         </div>
-        <div class="columns interpolation-panel">
+        <div class="columns interpolation-panel bottom-aligned-panel">
           <div class="column is-6 has-text-centered">
             <img src="./static/images/supp_coco_image_level.png"
                  class="image"
@@ -184,7 +225,7 @@ Detectors through Controllable Image Editing</h1>
           </div>
         </div>
 
-        <div class="columns interpolation-panel">
+        <div class="columns interpolation-panel bottom-aligned-panel">
           <div class="column is-6 has-text-centered">
             <img src="./static/images/supp_linz_image_level.png"
                  class="image"
@@ -205,11 +246,12 @@ Detectors through Controllable Image Editing</h1>
         <h3 class="title is-4">Cross-Location Transferability</h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            For each scene, we composite the vehicle into five additional backgrounds while keeping the vehicle appearance unchanged. 
+            The new scenes introduce diverse environmental conditions, including different weather (e.g., cloudy, rainy, and foggy) and seasonal variations (e.g., summer and winter). 
+            Faster R-CNN achieves an AP<sub>50</sub> of 99.5% on the corresponding clean images, whereas the camouflaged versions reduce performance to 38.2%, corresponding to a 61.3% drop.
           </p>
         </div>
-        
+
         <div class="interpolation-panel cross-location-row">
           <div class="cross-location-left has-text-centered">
             <img src="./static/images/supp_transferable_other_places_original.png"
@@ -230,10 +272,56 @@ Detectors through Controllable Image Editing</h1>
         <h3 class="title is-4">Physical-World Transferability</h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+          We employ an Epson EpiqVisionTM Mini EF12 projector to project real images and
+          use an iPhone 16 Pro Max to capture the resulting scenes. The phone is positioned close to both the projector’s optical axis and the intended camera center
+          to minimize parallax and perspective distortion, ensuring the captured photos
+          faithfully reflect the viewpoint of a real detector. 
+          </p>
+          <p>
+            For the LINZ dataset, real-world images are projected onto a whiteboard, and a 3D-printed sedan model is placed at the corresponding vehicle location. 
+            For the COCO dataset, we reconstruct the scenes using Depth Anything 3 and 3D-print them. Then the images are projected directly onto 3D-printed scenes.
           </p>
         </div>
+
+        <div class="columns interpolation-panel bottom-aligned-panel">
+          <div class="column is-5 has-text-centered">
+            <img src="./static/images/supp_projector_linz_setup.png"
+                 class="image"
+                 alt="linz_setup."/>
+            <p class="is-bold">LINZ setup</p>
+          </div>
+
+          <div class="column is-7 has-text-centered">
+            <img src="./static/images/supp_projector_coco_setup.png"
+                 class="image"
+                 alt="coco_setup."/>
+            <p class="is-bold">COCO setup</p>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+          For both datasets, each example is shown in five columns: clean digital images, photos of the projected clean scenes, style reference areas, composite images obtained by replacing the original vehicles with their camouflaged versions, and photos of the projected camouflaged scenes. 
+          Across both LINZ and COCO examples, detectors assign high confidence to the clean cases but substantially lower confidence after camouflage is applied, indicating that the adversarial appearance learned in simulation transfers effectively to physical-world settings.
+          </p>
+        </div>
+
+        <div class="columns interpolation-panel bottom-aligned-panel">
+          <div class="column is-5 has-text-centered">
+            <img src="./static/images/supp_projector_linz.png"
+                 class="image"
+                 alt="linz_setup."/>
+            <p class="is-bold">LINZ Examples</p>
+          </div>
+
+          <div class="column is-7 has-text-centered">
+            <img src="./static/images/supp_projector_coco.png"
+                 class="image"
+                 alt="coco_setup."/>
+            <p class="is-bold">COCO Examples</p>
+          </div>
+        </div>
+
 
 
       </div>
