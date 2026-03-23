@@ -80,7 +80,7 @@ Detectors through Controllable Image Editing</h1>
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2603.19456"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -132,7 +132,7 @@ Detectors through Controllable Image Editing</h1>
     <div class="hero-body">
       <img id="teaser" src="./static/images/teaser.png" alt="teasor" style="width: 70%; height: auto; display: block; margin: 0 auto;">
       <h2 class="subtitle has-text-centered", style="margin-top: 1rem;">
-        <p>Given a real image, our method stylizes the target vehicle based on either its immediate surroundings (image-level) or a visual concept present in the overall scene (scene-level).</p>
+        <p>Given a real image, our method stylizes the target vehicle using either its immediate surroundings (image-level) or a visual concept present in the overall scene (scene-level), while reducing detector performance.</p>
       </h2>
     </div>
   </div>
@@ -164,8 +164,8 @@ Detectors through Controllable Image Editing</h1>
     </p>
     <ul style="font-size: 18px; margin-left: 2em; margin-top: 0.5em;">
         <li>Stronger adversarial effectiveness, better preservation of vehicle structure, and improved stealthiness compared to SOTA;</li>
-        <li>Transferability to black-box detectors, diverse environmental conditions, and the physical world.</li>
-        <li>Robustness under preprocessing defense strategies such as denoising and smoothing;</li>
+        <li>Transferability to black-box detectors, diverse environmental conditions, and the physical world;</li>
+        <li>Robustness under preprocessing defense strategies such as denoising and smoothing.</li>
     </ul>
   </div>
 </div>
@@ -206,38 +206,45 @@ Detectors through Controllable Image Editing</h1>
         <h3 class="title is-4">Qualitative Results</h3>
         <div class="content has-text-justified">
           <p>
-
+            COCO examples cover urban, rural, road, sky, and lake environments. We use building, grass, tree, sky, and water as stylization concepts.
           </p>
         </div>
-        <div class="columns interpolation-panel bottom-aligned-panel">
-          <div class="column is-6 has-text-centered">
+        <div class="columns interpolation-panel vertical-panel narrow-panel-2">
+          <div class="has-text-centered">
             <img src="./static/images/supp_coco_image_level.png"
                  class="image"
                  alt="coco_image_level."/>
-            <p class="is-bold">COCO Image-Level</p>
+            <p class="is-bold" style="font-size: 20px;">COCO Image-Level</p>
           </div>
 
-          <div class="column is-6 has-text-centered">
+          <div class="has-text-centered">
             <img src="./static/images/supp_coco_scene_level.png"
                  class="image"
                  alt="coco_scene_level."/>
-            <p class="is-bold">COCO Scene-Level</p>
+            <p class="is-bold" style="font-size: 20px;">COCO Scene-Level</p>
           </div>
         </div>
 
-        <div class="columns interpolation-panel bottom-aligned-panel">
-          <div class="column is-6 has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            LINZ examples cover residential, industrial, agricultural, parking lot, and highway environments. We use house, building, field,
+tree, and grass as stylization concepts.
+          </p>
+        </div>
+
+        <div class="columns interpolation-panel vertical-panel narrow-panel-2">
+          <div class="has-text-centered">
             <img src="./static/images/supp_linz_image_level.png"
                  class="image"
                  alt="linz_image_level."/>
-            <p class="is-bold">LINZ Image-Level</p>
+            <p class="is-bold" style="font-size: 20px;">LINZ Image-Level</p>
           </div>
 
-          <div class="column is-6 has-text-centered">
+          <div class="has-text-centered">
             <img src="./static/images/supp_linz_scene_level.png"
                  class="image"
                  alt="linz_scene_level."/>
-            <p class="is-bold">LINZ Scene-Level</p>
+            <p class="is-bold" style="font-size: 20px;">LINZ Scene-Level</p>
           </div>
         </div>
 
@@ -283,19 +290,19 @@ Detectors through Controllable Image Editing</h1>
           </p>
         </div>
 
-        <div class="columns interpolation-panel bottom-aligned-panel">
-          <div class="column is-5 has-text-centered">
+        <div class="columns interpolation-panel vertical-panel narrow-panel-2">
+          <div class="has-text-centered">
             <img src="./static/images/supp_projector_linz_setup.png"
-                 class="image"
+                 class="image" style="width: 90%; margin: 0 auto;"
                  alt="linz_setup."/>
-            <p class="is-bold">LINZ setup</p>
+            <p class="is-bold" style="font-size: 20px;">LINZ setup</p>
           </div>
 
-          <div class="column is-7 has-text-centered">
+          <div class="has-text-centered">
             <img src="./static/images/supp_projector_coco_setup.png"
                  class="image"
                  alt="coco_setup."/>
-            <p class="is-bold">COCO setup</p>
+            <p class="is-bold" style="font-size: 20px;">COCO setup</p>
           </div>
         </div>
 
@@ -306,20 +313,26 @@ Detectors through Controllable Image Editing</h1>
           </p>
         </div>
 
-        <div class="columns interpolation-panel bottom-aligned-panel">
-          <div class="column is-5 has-text-centered">
+        <div class="columns interpolation-panel vertical-panel narrow-panel">
+          <div class="has-text-centered">
             <img src="./static/images/supp_projector_linz.png"
                  class="image"
                  alt="linz_setup."/>
-            <p class="is-bold">LINZ Examples</p>
+            <p class="is-bold" style="font-size: 18px;">LINZ Examples</p>
           </div>
 
-          <div class="column is-7 has-text-centered">
+          <div class="has-text-centered">
             <img src="./static/images/supp_projector_coco.png"
                  class="image"
                  alt="coco_setup."/>
-            <p class="is-bold">COCO Examples</p>
+            <p class="is-bold" style="font-size: 18px;">COCO Examples</p>
           </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            Please refer to the <a href="https://arxiv.org/abs/2603.19456" target="_blank" rel="noopener noreferrer">paper</a> for more experimental results.
+          </p>
         </div>
 
 
@@ -336,7 +349,15 @@ Detectors through Controllable Image Editing</h1>
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      TODO: Add BibTeX here.
+      @misc{CtrlCamo,
+        title={{In-the-Wild Camouflage Attack on Vehicle Detectors through Controllable Image Editing}}, 
+        author={Xiao Fang and Yiming Gong and Stanislav Panev and Celso de Melo and Shuowen Hu and Shayok Chakraborty and Fernando De la Torre},
+        year={2026},
+        eprint={2603.19456},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2603.19456}, 
+      }
     </code></pre>
   </div>
 </section>
